@@ -1,10 +1,15 @@
 package main
 
 import (
-    "net/http"
 	"fmt"
+	"net/http"
 )
 
 func main() {
-	fmt.Println("running go-service-template", http.StatusNoContent)
+	fmt.Println("running go-service-template")
+	http.HandleFunc("/hi", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("hi"))
+	})
+	fmt.Println("listening on :8080")
+	http.ListenAndServe(":8080", nil)
 }

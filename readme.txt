@@ -16,3 +16,8 @@ go: to add module requirements and sums:
 
 > nodemon --exec go run main.go --signal SIGTERM
 (without --signal SIGTERM, it wasnt reloading for me)
+
+5. /hello endpoint works
+
+> curl localhost:8080/hi
+hi⏎                                 
