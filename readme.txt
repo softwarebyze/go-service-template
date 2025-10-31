@@ -11,3 +11,8 @@ go version go1.25.3 darwin/arm64
 go: creating new go.mod: module github.com/softwarebyze/go-service-template
 go: to add module requirements and sums:
         go mod tidy
+
+4. for hot reloading, i used nodemon:
+
+> nodemon --exec go run main.go --signal SIGTERM
+(without --signal SIGTERM, it wasnt reloading for me)
