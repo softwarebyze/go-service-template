@@ -1,0 +1,36 @@
+openapi: 3.1.0
+info:
+  title: go-service-template API
+  version: 0.1.0
+  description: Minimal OpenAPI for the books endpoint
+servers:
+  - url: http://localhost:8080
+paths:
+  /books:
+    get:
+      summary: List books
+      description: Returns a list of books
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Book'
+components:
+  schemas:
+    Book:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        author:
+          type: string
+      required:
+        - id
+        - title
+        - author

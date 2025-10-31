@@ -10,3 +10,13 @@ then i opened a new terminal and it worked:
 go version go1.25.3 darwin/arm64
 
 u could prob do `brew install go` too
+
+Problem:
+> go install github.com/swaggo/swag/cmd/swag@latest
+> swag --version
+fish: Unknown command: swag
+
+Solution:
+> export PATH=$PATH:$(go env GOPATH)/bin
+> swag --version
+swag version v1.16.4
