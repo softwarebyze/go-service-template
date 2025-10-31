@@ -7,6 +7,9 @@ import (
 
 func main() {
 	fmt.Println("running go-service-template")
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("go-service-template, https://github.com/softwarebyze/go-service-template"))
+	})
 	http.HandleFunc("/hi", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("hi"))
 	})
