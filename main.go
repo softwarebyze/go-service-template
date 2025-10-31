@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import (
+    "net/http"
+	"fmt"
+)
 
 func main() {
-	fmt.Println("hi")
+	fmt.Println("running go-service-template", http.StatusNoContent)
 }
